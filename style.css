@@ -189,7 +189,40 @@ body::before {
     radial-gradient(circle at 20% 20%, rgba(76,255,76,0.08), transparent 40%),
     radial-gradient(circle at 80% 60%, rgba(76,255,76,0.05), transparent 40%);
   pointer-events: none;
+}/* PARTICLE ENERGY BACKGROUND */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(76,255,76,0.15) 1px, transparent 1px),
+    radial-gradient(circle, rgba(76,255,76,0.08) 1px, transparent 1px);
+  background-size: 60px 60px, 120px 120px;
+  animation: particles 40s linear infinite;
+  pointer-events: none;
+  z-index: 0;
 }
+
+@keyframes particles {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 1000px 600px, -800px -400px;
+  }
+}
+
+/* KEEP CONTENT ABOVE PARTICLES */
+header,
+nav,
+section,
+footer,
+.whatsapp-float {
+  position: relative;
+  z-index: 2;
+}
+
+
 
 
 
