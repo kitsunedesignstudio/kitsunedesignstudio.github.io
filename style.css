@@ -11,7 +11,7 @@
 /* BACKGROUND */
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
   background: radial-gradient(circle at top, #0c140c, #000);
   color: #eaffea;
 }
@@ -190,6 +190,7 @@ body::before {
     radial-gradient(circle at 80% 60%, rgba(76,255,76,0.05), transparent 40%);
   pointer-events: none;
 }
+
 
 
 
