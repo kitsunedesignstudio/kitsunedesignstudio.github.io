@@ -3,20 +3,36 @@
   --dark: #050505;
 }
 
+/* RESET */
 * {
   box-sizing: border-box;
 }
 
+/* BACKGROUND */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: radial-gradient(circle at top, #0b0b0b, #000);
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle at top, #0c140c, #000);
   color: #eaffea;
 }
 
+/* ANIMATIONS */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 10px rgba(76,255,76,0.3); }
+  50% { box-shadow: 0 0 30px rgba(76,255,76,0.8); }
+  100% { box-shadow: 0 0 10px rgba(76,255,76,0.3); }
+}
+
+@keyframes textGlow {
+  0% { text-shadow: 0 0 10px var(--green); }
+  50% { text-shadow: 0 0 25px var(--green); }
+  100% { text-shadow: 0 0 10px var(--green); }
+}
+
+/* HEADER */
 header {
   text-align: center;
-  padding: 60px 20px;
+  padding: 70px 20px;
   background: url("images/banner.png") center/cover no-repeat;
   position: relative;
 }
@@ -25,7 +41,7 @@ header::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.8);
 }
 
 header * {
@@ -35,14 +51,13 @@ header * {
 
 header img {
   width: 160px;
-  filter: drop-shadow(0 0 20px var(--green));
+  animation: glowPulse 4s infinite;
 }
 
 header h1 {
   font-size: 48px;
-  margin: 20px 0 10px;
   color: var(--green);
-  text-shadow: 0 0 15px var(--green);
+  animation: textGlow 3s infinite;
 }
 
 header p {
@@ -50,6 +65,7 @@ header p {
   opacity: 0.9;
 }
 
+/* NAV */
 nav {
   background: #000;
   padding: 15px;
@@ -64,26 +80,27 @@ nav a {
   font-weight: bold;
 }
 
+/* CONTENT */
 section {
   max-width: 1100px;
   margin: auto;
   padding: 60px 20px;
 }
 
+/* CARDS */
 .card {
-  background: #0b0b0b;
-  border: 1px solid #0f0f0f;
-  border-radius: 10px;
-  padding: 30px;
-  margin-bottom: 30px;
-  box-shadow: 0 0 25px rgba(76,255,76,0.15);
+  background: #080808;
+  border-radius: 12px;
+  padding: 35px;
+  margin-bottom: 40px;
+  animation: glowPulse 6s infinite;
 }
 
-.card h2 {
-  color: var(--green);
-  text-shadow: 0 0 10px var(--green);
+.card:hover {
+  transform: scale(1.02);
 }
 
+/* SERVICES GRID */
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -91,47 +108,61 @@ section {
 }
 
 .service {
-  text-align: center;
-  padding: 20px;
-  border: 1px solid #111;
-  border-radius: 8px;
-  background: #060606;
-}
-
-.service img {
-  width: 50px;
-  margin-bottom: 10px;
-  filter: drop-shadow(0 0 8px var(--green));
-}
-
-.price-img {
-  width: 100%;
+  background: #050505;
   border-radius: 10px;
-  box-shadow: 0 0 30px rgba(76,255,76,0.2);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(76,255,76,0.15);
 }
 
+.service:hover {
+  box-shadow: 0 0 30px rgba(76,255,76,0.6);
+}
+
+/* PRICING TABLE */
+.pricing {
+  display: grid;
+  gap: 20px;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+.price-item span {
+  color: var(--green);
+  font-weight: bold;
+}
+
+/* WHATSAPP */
 .whatsapp {
   text-align: center;
-  padding: 40px;
+  padding: 50px;
   background: radial-gradient(circle, #0f2f0f, #000);
-  border-radius: 12px;
+  border-radius: 15px;
+  animation: glowPulse 5s infinite;
 }
 
 .whatsapp a {
   display: inline-block;
-  margin-top: 15px;
-  padding: 15px 35px;
+  margin-top: 20px;
+  padding: 15px 40px;
   background: var(--green);
   color: #000;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 40px;
-  box-shadow: 0 0 25px var(--green);
+  border-radius: 50px;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
   font-size: 14px;
   color: #777;
 }
+
+
